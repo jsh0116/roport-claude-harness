@@ -1,0 +1,7 @@
+{
+  "name": "roport-harness",
+  "description": "RO:PORT 모노레포(Pinky·OMX·관제·AI·서비스·Web) 여러 모듈 개발 하네스: 탐색·계약 설계·구현·안전 검토·QA 에이전트와 오케스트레이터.",
+  "version": "0.1.0",
+  "author": { "name": "SeungHoon Jeong" },
+  "keywords": ["roport", "ros2", "fastapi", "spring-boot", "react", "harness"]
+}
