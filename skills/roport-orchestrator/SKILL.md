@@ -31,6 +31,20 @@ description: "RO:PORT 모노레포(Pinky·OMX 로봇팔·관제 서버·AI 서�
 Pinky 차선 인식·Pure Pursuit·Nav2 내부는 `pinky-harness` 플러그인 에이전트(`lane-perception-dev`, `drive-control-dev`, `nav2-dev`)에 맡긴다. 설치돼 있지 않으면 `pinky-engineer`가 처리하고 미설치 사실을 보고한다.
 루트 파일(`scripts/`, `.github/`, 루트 `package.json`)과 부모 소유 파일은 메인이 직접 고친다. 필요한 역할만 실행한다.
 
+### 모델 조정
+
+각 에이전트 frontmatter의 `model:`이 기본값이다(별칭이라 최신 Opus·Sonnet으로 해석된다). 작업 성격이 기본값과 다르면 `Agent` 호출의 `model` 인자로 그 호출만 바꾸고, 바꾼 이유를 보고에 한 줄 남긴다.
+
+| 상황 | 대상 | 조정 |
+| --- | --- | --- |
+| 파일 위치·호출부 목록만 필요한 단순 조사 | explorer | haiku |
+| CI 명령만 돌리고 결과를 옮기는 재검사(경계 대조 없음) | qa | haiku |
+| 실시간 상태(WSS 구독·재접속), 권한 분기가 복잡한 화면 | web-engineer | opus |
+| 모듈 간 계약을 처음 추적하는 조사(WSS·MQTT 양쪽 흐름) | explorer | opus |
+| 문구·설정값·테스트 추가 같은 기계적 수정 | 엔지니어 | sonnet |
+
+안전 체크리스트(S) 항목에 닿는 작업과 reviewer·architect는 낮추지 않는다. 판단이 애매하면 기본값을 쓴다.
+
 ## 0단계: 맥락 확인과 규모 판단
 
 1. 루트·대상 모듈 `AGENTS.md`, `git status`/branch, 관련 manifest·CI를 읽는다.
