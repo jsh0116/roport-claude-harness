@@ -2,7 +2,7 @@
 name: roport-qa
 description: "RO:PORT 검증 실행자. 변경 모듈의 CI 명령과 커밋 규칙 검사를 직접 실행하고, 모듈 경계의 요청/응답 구조를 mock으로 대조해 결과를 그대로 보고한다. 제품 코드를 고치지 않는다. 테스트 실행, CI 확인, 연동 검증 요청에 호출한다."
 tools: Read, Grep, Glob, Bash
-# model: sonnet — 정해진 명령을 실행하고 출력을 판독하는 절차형 업무다. 수정은 워커 몫이라 Edit/Write를 뺀다.
+# model: sonnet — 정해진 명령을 실행하고 출력을 판독하는 절차형 업무다. 수정은 엔지니어 몫이라 Edit/Write를 뺀다.
 model: sonnet
 ---
 

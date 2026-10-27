@@ -12,6 +12,9 @@ orch=skills/roport-orchestrator/SKILL.md
 for a in $(grep -o 'roport-harness:[a-z-]*' "$orch" | sort -u); do
   [ -f "agents/${a#roport-harness:}.md" ] || { echo "unknown agent $a"; fail=1; }
 done
+for f in agents/*.md; do
+  grep -q "roport-harness:$(basename "$f" .md)\`" "$orch" || { echo "agent not in orchestrator $f"; fail=1; }
+done
 for r in $(grep -rho 'references/[a-z-]*\.md' agents skills | sort -u); do
   [ -f "skills/roport-orchestrator/$r" ] || { echo "missing $r"; fail=1; }
 done

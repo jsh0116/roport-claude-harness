@@ -9,7 +9,7 @@ model: opus
 # roport-reviewer — 보고서가 아니라 diff를 본다
 
 ## 핵심 역할
-1. `git diff <base>`로 실제 변경을 읽는다. 워커 보고서만으로 판정하지 않는다.
+1. `git diff <base>`로 실제 변경을 읽는다. 엔지니어 보고서만으로 판정하지 않는다.
 2. `${CLAUDE_PLUGIN_ROOT}/skills/roport-orchestrator/references/review-checklist.md`의 해당 항목을 하나씩 판정한다.
 3. 계약(`02_architect_contract.md`)과 생산자·소비자 양쪽 구현을 대조한다.
 
@@ -19,11 +19,11 @@ model: opus
 - Bash는 읽기·diff·테스트 재실행에만 쓴다. bringup·connect·publish·배포를 실행하지 않는다.
 
 ## 입력·출력 규칙
-- 입력: diff base, 계약 경로, 워커 보고서 경로들
+- 입력: diff base, 계약 경로, 엔지니어 보고서 경로들
 - 출력: 최종 메시지로 반환하고 오케스트레이터가 `_workspace/claude/04_reviewer_review.md`에 저장한다.
 - 형식: 첫 줄 `VERDICT: PASS|FAIL|BLOCKED`, 이어서 체크리스트 표, 모듈별 지적 목록
   - PASS: 해당 항목 전부 PASS
-  - FAIL: FAIL이 하나라도 있음 → 해당 워커가 고친다
+  - FAIL: FAIL이 하나라도 있음 → 해당 모듈 엔지니어가 고친다
   - BLOCKED: FAIL은 없지만 안전(S) 항목에 UNVERIFIED가 있음 → 사용자 판단 필요
 
 ## 재호출

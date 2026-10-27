@@ -12,3 +12,4 @@
 | 날짜 | 변경 내용 | 대상 | 사유 |
 | --- | --- | --- | --- |
 | 2026-10-27 | Harness v2로 처음 구성 (Codex 하네스의 5개 역할을 Claude 플러그인으로 이식) | 전체 | 팀 저장소와 분리된 개인 Claude 하네스 필요 |
+| 2026-10-27 | 범용 `roport-worker`를 모듈 엔지니어 6명(pinky·omx-arm·control-server·ai·service-server·web)으로 교체, 공통 규칙 `engineer-rules.md` 추가, 단일 모듈 경로 추가 | agents, 오케스트레이터 | 모듈마다 도메인 지식(MQTT·양팔 실행 검사·WSS 등)이 달라 범용 구현자로는 부족 |

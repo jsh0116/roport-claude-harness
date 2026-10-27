@@ -7,7 +7,7 @@
       "name": "roport-harness",
       "source": "./",
       "description": "RO:PORT 여러 모듈 구현·연동·검증 하네스",
-      "version": "0.1.0"
+      "version": "0.2.0"
     }
   ]
 }

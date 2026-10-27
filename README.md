@@ -1,12 +1,13 @@
 # RO:PORT Claude Harness
 
 RO:PORT 모노레포의 여러 모듈 개발을 돕는 개인 Claude Code 하네스(플러그인)입니다.
-Codex 하네스는 [roport-codex-harness](https://github.com/jsh0116/roport-codex-harness)에서 따로 관리합니다. 역할 구성(탐색·설계·구현·검토·QA)은 같게 맞췄습니다.
+Codex 하네스는 [roport-codex-harness](https://github.com/jsh0116/roport-codex-harness)에서 따로 관리합니다.
 
 ## 구성
 
-- `agents/`: `roport-explorer`(sonnet), `roport-architect`(opus), `roport-worker`(opus), `roport-reviewer`(opus), `roport-qa`(sonnet)
-- `skills/roport-orchestrator/`: 탐색 → 계약 설계 → 모듈별 구현 → 검토·QA 흐름, 프로젝트 맥락·검증·체크리스트
+- `agents/` 공통 역할: `roport-explorer`(sonnet), `roport-architect`(opus), `roport-reviewer`(opus), `roport-qa`(sonnet)
+- `agents/` 모듈 엔지니어: `pinky-engineer`, `omx-arm-engineer`, `control-server-engineer`, `ai-engineer`, `service-server-engineer`(opus), `web-engineer`(sonnet)
+- `skills/roport-orchestrator/`: 탐색 → 계약 설계 → 모듈별 구현 → 검토·QA 흐름, 프로젝트 맥락·엔지니어 공통 규칙·검증·체크리스트
 - `scripts/check.sh`: 하네스 자체 정합성 검사
 
 Pinky 내부 차선 인식·주행·Nav2는 `pinky-harness` 플러그인을 사용합니다.
